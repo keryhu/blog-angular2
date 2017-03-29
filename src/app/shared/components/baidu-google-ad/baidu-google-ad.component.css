@@ -1,0 +1,7 @@
+
+/*  ad 广告位置的css */
+
+.ad{
+  display: flex;
+  justify-content: space-around;
+}

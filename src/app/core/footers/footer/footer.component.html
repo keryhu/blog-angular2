@@ -1,0 +1,16 @@
+<md-card>
+  <md-card-title>
+    友情链接
+  </md-card-title>
+
+  <md-card-actions>
+    <div class="links" *ngFor="let f of friendlyLinks">
+      <a md-button [href]='f.link'>{{f.name}}</a>
+    </div>
+
+  </md-card-actions>
+
+  <md-card-footer align="center">
+    &copy; 2017 keryhu.com 版权所有ICP证: 沪ICP备17012207号
+  </md-card-footer>
+</md-card>

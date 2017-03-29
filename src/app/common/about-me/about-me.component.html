@@ -1,0 +1,46 @@
+
+<div class="whole">
+  <md-card>
+    <md-toolbar color="primary">关于我</md-toolbar>
+
+    <md-card-content>
+      <div class="hobbies">
+        <md-list>
+          <md-list-item *ngFor="let hobbyName of hobbyNames">
+            <span class="hobbyName">{{hobbyName}}</span>
+          </md-list-item>
+        </md-list>
+        <md-list>
+          <md-list-item *ngFor="let hobbyValue of hobbyValues">
+            {{hobbyValue}}
+          </md-list-item>
+        </md-list>
+
+      </div>
+
+      <div class="aboutMeContent">
+      <p>
+        市场营销小本已，为数年营销，创数年业。因喜互联网，爱技术，后专Java Web。
+      </p>
+      <p>
+        自小喜欢数学，几乎所有的理科，因高考失利，大学被调剂到了市场营销专业。 毕业后，做了几年销售，后创业。 创业的是自己喜欢的互联网，就一门心思的扑到了java Web开发里，前后端都做， 前端接触过Jquery，Bootstrap，Css，AngularJs，Angular2。后端熟悉Java ，Spring框架，几乎Spring框架下的所有生态都接触过，包含（spring mvc，spring boot，spring cloud，spring security，spring data。。。），数据库方面 接触过MySql，MongoDb，Redis，中间件： RabbitMq，
+        努力的方向：Java、大数据、人工智能！
+      </p>
+      <p>
+        因为之前技能只停留在能简单的实现技术，但是对原理不是特别了解，发现自己基础薄弱！ 所以最近阶段在补习大学数学和软件工程方面的理论知识，有新的心得会更新！
+      </p>
+      </div>
+    </md-card-content>
+    <md-card-actions>
+      <a md-raised-button [routerLink]="blogUrl" routerLinkActive="active">更多博客分享</a>
+    </md-card-actions>
+  </md-card>
+
+  <app-baidu-google-ad class="ad"></app-baidu-google-ad>
+
+
+</div>
+
+
+
+

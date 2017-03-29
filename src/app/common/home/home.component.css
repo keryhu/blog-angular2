@@ -1,0 +1,11 @@
+.whole{
+  margin: 15px;
+}
+
+.whole md-card{
+  margin: 15px 0;
+}
+
+.whole md-card md-card-content{
+  padding: 15px;
+}

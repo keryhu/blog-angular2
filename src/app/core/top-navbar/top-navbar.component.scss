@@ -1,0 +1,25 @@
+/*
+md-toolbar img{
+  margin-left: 5%;
+  margin-right: 3%;
+}
+ */
+
+md-toolbar {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+md-nav-list a {
+  text-decoration: none;
+  color: inherit;
+
+}
+
+md-nav-list {
+  display: -webkit-flex;
+  display: flex;
+}
+

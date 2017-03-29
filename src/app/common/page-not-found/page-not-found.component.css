@@ -1,0 +1,11 @@
+md-card{
+  margin: 15px;
+}
+h1{
+  color: tomato;
+  margin-left: 2em;
+}
+md-card-actions{
+  display: flex;
+  justify-content: center;
+}

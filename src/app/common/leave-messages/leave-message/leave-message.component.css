@@ -1,0 +1,15 @@
+.whole{
+  margin: 15px;
+}
+
+.whole md-card{
+  margin: 15px 0;
+}
+
+.whole md-card p{
+  text-indent:2em;
+}
+
+.whole md-card md-card-content{
+  padding: 15px;
+}

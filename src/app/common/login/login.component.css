@@ -1,0 +1,20 @@
+.whole{
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+
+}
+.whole md-card{
+  margin: 15px 0;
+  width: 60%;
+}
+
+
+.full-width{
+  width: 100%;
+}
+
+.errMsg{
+  color: tomato;
+  font-weight: 800;
+}

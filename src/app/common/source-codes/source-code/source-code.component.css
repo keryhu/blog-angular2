@@ -1,0 +1,19 @@
+.whole{
+  margin: 15px;
+}
+
+.whole md-card{
+  margin: 15px 0;
+}
+
+.whole md-card p{
+  text-indent:2em;
+}
+md-card-content{
+  display: flex;
+  flex-direction: column;
+}
+
+small{
+  text-align: right;
+}

@@ -1,0 +1,61 @@
+<img src="assets/indexPicture.png" width="100%" alt="树己之路"/>
+
+<div class="whole">
+
+  <md-card>
+    <md-toolbar color="primary">这里有啥?</md-toolbar>
+
+    <md-card-content>
+      <p>
+        一名在上海奋斗的IT中年，记录了他学习Java、大数据、机器学习、 人工智能技能等领域心得，希望能方便更多的人！
+      </p>
+      <p>
+        如果您也是一名程序（猿），也许您可以多来这里，因为作者和您一样的苦逼，这里有共同语言，
+        这里说不定能找到您苦思冥想的Bug
+      </p>
+    </md-card-content>
+    <md-card-actions>
+      <a md-raised-button [routerLink]="blogUrl" routerLinkActive="active">更多博客分享</a>
+    </md-card-actions>
+
+  </md-card>
+
+  <app-baidu-google-ad></app-baidu-google-ad>
+
+  <md-card>
+    <md-toolbar color="primary">为嘛叫"树己之路"?</md-toolbar>
+
+    <md-card-content>
+      <p>
+        书（树）写作者在IT领域钻研，奋斗的点滴，成长之路！简称"树己之路"。
+      </p>
+      <p>
+        <strong> 这里没有抄袭，没有转载，只有原创！</strong>
+      </p>
+      <ol>
+        <li>
+          为了自己掌握的新技能，通过发表博客，能更深层次的理解.
+        </li>
+        <li>
+          为了能结交圈内人士，如果能帮上一些正在寻找答案的人，就再好不过了！
+        </li>
+      </ol>
+
+    </md-card-content>
+    <md-card-actions>
+      <a md-raised-button [routerLink]="aboutMeUrl" routerLinkActive="active">更多关于作者</a>
+    </md-card-actions>
+  </md-card>
+
+  <!-- 这里配置后台处理的 post url-->
+  <ckeditor
+    [(ngModel)]="ckeditorContent"
+    [config]="{uiColor: '#666666',filebrowserUploadUrl:'/uploader/upload'}"
+    (change)="onChange($event)"
+    (ready)="onReady($event)"
+    (blur)="onBlur($event)"
+    debounce="500">
+  </ckeditor>
+
+
+</div>

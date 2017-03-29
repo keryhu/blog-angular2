@@ -1,0 +1,19 @@
+.whole{
+  margin: 15px;
+}
+
+.hobbies{
+  display: flex;
+}
+
+.hobbyName{
+  text-shadow: 1px 1px #3e3e3e;
+}
+
+.aboutMeContent p{
+  text-indent:2em;
+}
+
+.ad{
+  margin: 15px;
+}

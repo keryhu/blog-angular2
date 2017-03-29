@@ -1,0 +1,11 @@
+<md-toolbar>
+  <a href="/"><img src="favicon.ico" width="50" height="50" alt="树己之路"/></a>
+  <md-nav-list>
+    <a md-list-item routerLink="/" routerLinkActive="active">首页</a>
+    <a md-list-item [routerLink]="aboutMeUrl" routerLinkActive="active">关于我</a>
+    <a md-list-item [routerLink]="blogUrl" routerLinkActive="active">博客</a>
+    <a md-list-item [routerLink]="sourceCodeUrl" routerLinkActive="active">开源</a>
+    <a md-list-item [routerLink]="leaveMessageUrl" routerLinkActive="active">留言</a>
+  </md-nav-list>
+
+</md-toolbar>

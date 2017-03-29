@@ -1,0 +1,37 @@
+<div class="whole">
+<md-card>
+  <md-card-title align="center">
+    登陆
+  </md-card-title>
+  <md-card-content>
+    <p class="errMsg">{{loginErrMsg}}</p>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <p>
+        <md-input-container class="full-width">
+          <input mdInput placeholder="用户名" value="" formControlName="username" >
+        </md-input-container>
+      </p>
+
+      <div *ngIf="formErrors.username" class="errMsg">
+        {{ formErrors.username }}
+      </div>
+
+      <md-input-container class="full-width">
+        <input mdInput placeholder="密码" value="" formControlName="password" type="password">
+      </md-input-container>
+
+      <div *ngIf="formErrors.password" class="errMsg">
+        {{ formErrors.password }}
+      </div>
+
+      <button class="full-width loginButton" type="submit"
+              md-raised-button
+              color="primary"   [disabled]="!form.valid">
+        登录
+      </button>
+    </form>
+
+
+  </md-card-content>
+</md-card>
+</div>
