@@ -6,6 +6,11 @@
     <a md-list-item [routerLink]="blogUrl" routerLinkActive="active">博客</a>
     <a md-list-item [routerLink]="sourceCodeUrl" routerLinkActive="active">开源</a>
     <a md-list-item [routerLink]="leaveMessageUrl" routerLinkActive="active">留言</a>
+
+  </md-nav-list>
+  <span class="example-fill-remaining-space"></span>
+  <md-nav-list>
+    <a md-list-item *ngIf="getLoggedIn()|async " (click)="logout()" routerLinkActive="active">安全退出</a>
   </md-nav-list>
 
 </md-toolbar>

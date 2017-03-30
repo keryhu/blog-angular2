@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../core/auth/auth.service";
+import {Router} from "@angular/router";
+import {lsat} from "../../core/index";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -12,7 +15,9 @@ export class LoginComponent implements OnInit {
 
   private submitted = false;
   private loginErrMsg='';
-  constructor(private title:Title,private fb:FormBuilder,private authService:AuthService) { }
+  private loginSub: Subscription;
+  constructor(private title:Title,private fb:FormBuilder,private authService:AuthService,
+              private router: Router) { }
 
   form:FormGroup;
   ngOnInit() {
@@ -66,12 +71,22 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted=true;
-    this.authService.login(this.form.value.username,this.form.value.password)
+    this.loginSub =this.authService.login(this.form.value.username,this.form.value.password)
       .subscribe(
         r=>{
-          console.log(r)
+          if(r){
+            //如果之前存储了试图访问的url, 那么就导航到此url
+            if (this.authService.redirectUrl) {
+              this.router.navigate([this.authService.redirectUrl]);
+            }
+            else {
+              this.router.navigate(['/admin']);
+            }
+          }
         },
         err=>{
+          localStorage.removeItem(lsat);
+          this.submitted=false;
           if(err=='invalid_grant'){
             console.log(err);
             this.loginErrMsg='用户名，密码不匹配，请重新登录！';
@@ -79,6 +94,12 @@ export class LoginComponent implements OnInit {
 
         }
       );
+  }
+
+  ngOnDestroy() {
+    if (typeof this.loginSub !== 'undefined') {
+      this.loginSub.unsubscribe();
+    }
   }
 
 }

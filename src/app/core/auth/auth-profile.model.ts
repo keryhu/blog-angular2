@@ -8,6 +8,5 @@
 // 用在用户登录后，保存在localStorage里面，用户的信息，保护userId，loginName，，和refreshToken过期时间
 export class AuthProfile{
   loginName='';
-  userId='';
   refreshToken_expires_in=0;
 }

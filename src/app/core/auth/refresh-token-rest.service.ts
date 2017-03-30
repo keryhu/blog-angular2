@@ -24,12 +24,12 @@ export class RefreshTokenRestService {
       {headers: headers});
   }
 
-  get(userId:string,accessToken:string) {
+  get(loginName:string,accessToken:string) {
     let params:URLSearchParams = new URLSearchParams();
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', `Bearer ${accessToken}`);
-    params.set('userId', userId);
+    params.set('loginName', loginName);
     let options = new RequestOptions({ headers: headers,search:params ,body:''});
 
     return this.http.get(refreshTokenGetUrl, this.request.getAuthOptions(params))

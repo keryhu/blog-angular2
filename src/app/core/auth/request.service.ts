@@ -18,7 +18,9 @@ export class RequestService {
   constructor(private ers:HttpErrMsgConvertService){}
 
   getJsonHeaders():Headers {
-    return new Headers({ 'Content-Type': 'application/json' });
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return headers;
   }
 
   getAuthHeaders() :Headers{

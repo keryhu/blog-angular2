@@ -6,11 +6,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {TopNavbarModule} from "./top-navbar";
 import {FooterModule,GetFriendlyLinkService} from "./footers";
 import {BaiduGoogleAdModule} from "../shared";
-import {RequestService,AuthService,RefreshTokenRestService} from "./auth";
+import {RequestService, RefreshTokenRestService, AuthProviders} from "./auth";
 import {HttpErrMsgConvertService} from "./err-msg";
 
 // from "../common/blogs/get-blog-from-db.service" 不能写成 "../common" 要不然会出现 依赖循环的错误
 import {GetBlogFromDbService} from "../common/blogs/get-blog-from-db.service";
+// from "/auth/auth-guard.service" 不能写成 "../auth" 要不然会出现 依赖循环的错误
 
 
 
@@ -31,7 +32,7 @@ import {GetBlogFromDbService} from "../common/blogs/get-blog-from-db.service";
   ],
   declarations: [],
   providers:[GetBlogFromDbService,GetFriendlyLinkService,RequestService,HttpErrMsgConvertService,
-  AuthService,RefreshTokenRestService],
+    AuthProviders,RefreshTokenRestService],
   exports:[CommonModule,FormsModule,TopNavbarModule,FooterModule,FlexLayoutModule,BaiduGoogleAdModule,
 
     ]
