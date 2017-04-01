@@ -16,10 +16,12 @@ export class LoginComponent implements OnInit {
   private submitted = false;
   private loginErrMsg='';
   private loginSub: Subscription;
+  private form:FormGroup;
+
   constructor(private title:Title,private fb:FormBuilder,private authService:AuthService,
               private router: Router) { }
 
-  form:FormGroup;
+
   ngOnInit() {
     this.setTitle();
     this.createForm();

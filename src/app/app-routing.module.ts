@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'source-code',loadChildren:'app/common/source-codes/source-code/source-code.module#SourceCodeModule'},
   {path:'about-me',loadChildren:'app/common/about-me/about-me.module#AboutMeModule'},
   {path:'leave-message',loadChildren:'app/common/leave-messages/leave-message/leave-message.module#LeaveMessageModule'},
-  {path:'admin',loadChildren:'app/admins/admin-dashboard/admin-dashboard.module#AdminDashboardModule'},
+  {path:'admin',loadChildren:'app/admins/admin-center/admin-center.module#AdminCenterModule'},
   { path: '**',component:PageNotFoundComponent }
 
 ];

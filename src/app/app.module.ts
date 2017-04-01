@@ -10,6 +10,7 @@ import {CoreModule} from "./core";
 import {AppRoutingModule} from "./app-routing.module";
 import {SharedModule} from "./shared";
 import {CKEditorModule} from "ng2-ckeditor";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -20,10 +21,11 @@ import {CKEditorModule} from "ng2-ckeditor";
     //不能放在  coreModule
     PageNotFoundComponent,
 
+
   ],
   imports: [
     BrowserModule,
-
+    BrowserAnimationsModule,
     HttpModule,
     MaterialModule,
     CoreModule,

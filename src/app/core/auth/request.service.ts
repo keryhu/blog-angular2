@@ -23,7 +23,7 @@ export class RequestService {
     return headers;
   }
 
-  getAuthHeaders() :Headers{
+  private getAuthHeaders() :Headers{
     const headers = this.getJsonHeaders();
     const token = localStorage.getItem(lsat);
     headers.append('Authorization', `Bearer ${token}`);
@@ -62,24 +62,22 @@ export class RequestService {
   /*
    官网例子
 
-   let errMsg: string;
-   if (error instanceof Response) {
-   const body = error.json() || '';
-   const err = body.error || JSON.stringify(body);
-   errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-   } else {
-   errMsg = error.message ? error.message : error.toString();
-   }
-   console.error(errMsg);
-   return Observable.throw(errMsg);
 
    */
 
   getErrMsg(error: Response | any){
     let errMsg: string;
-
-    console.log(error);
+    console.log(error.toString());
+    if (error instanceof Response) {
+      const body = error.json() || '';
+      const err = body.error || JSON.stringify(body);
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    } else {
+      errMsg = error.message ? error.message : error.toString();
+    }
+    console.error(errMsg);
     return Observable.throw(errMsg);
+
   }
 
 

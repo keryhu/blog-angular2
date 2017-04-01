@@ -1,0 +1,14 @@
+md-toolbar {
+  display: flex;
+  background-color: #d1d2d1;
+}
+md-nav-list a {
+  text-decoration: none;
+  color: inherit;
+
+}
+
+md-nav-list {
+  display: flex;
+}
+

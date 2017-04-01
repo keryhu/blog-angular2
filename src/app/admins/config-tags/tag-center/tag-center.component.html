@@ -1,0 +1,30 @@
+<div class="whole">
+  <md-card>
+    <md-card-title align="center">管理标签</md-card-title>
+    <!--    ---------------------------------------------------------------------------->
+    <md-card class="card-item">
+      <md-card-title>
+        目前所有的标签
+      </md-card-title>
+
+      <md-card-content>
+
+        <md-chip-list>
+          <md-chip *ngFor="let tag of allTags">{{tag}}</md-chip>
+        </md-chip-list>
+
+
+      </md-card-content>
+    </md-card>
+    <!--     --------------------增加标签 -------------------------------------------->
+    <app-add-tag></app-add-tag>
+
+    <!--    ---------------------删除标签----------------------------------------------->
+    <app-del-tag [allTags]="allTags"></app-del-tag>
+
+    <!--     --------------------编辑标签-------------------------------------------------------->
+
+    <app-edit-tag [allTags]="allTags"></app-edit-tag>
+
+  </md-card>
+</div>

@@ -5,4 +5,11 @@
  */
 
 
-export * from './admin-dashboard';
+export * from './admin-center';
+export * from './config-blogs';
+export * from './admin-home';
+export * from './config-tags';
+
+export * from './shared';
+
+

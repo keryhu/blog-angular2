@@ -1,0 +1,23 @@
+<md-card class="card-item">
+  <md-card-title>
+    输入需要增加的标签
+  </md-card-title>
+  <md-card-content>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <p>
+        <md-input-container style="width: 60%">
+          <input mdInput placeholder="输入标签" formControlName="name">
+        </md-input-container>
+        <button md-fab type="submit" [disabled]="!form.valid">
+          <md-icon class="md-24">check</md-icon>
+        </button>
+      </p>
+
+      <div *ngIf="formErrors.name&&form.value.name>0" class="errMsg">
+        {{ formErrors.name }}
+      </div>
+
+    </form>
+  </md-card-content>
+</md-card>

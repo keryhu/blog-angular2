@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
-import {RequestService} from "../../core/auth/request.service";
 import {Http} from "@angular/http";
 
+import {RequestService,addBlogUrl,editBlogUrl} from "../../core";
+
 @Component({
-  selector: 'app-admin-dashboard',
-  templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.css']
+  selector: 'app-admin-home',
+  templateUrl: './admin-home.component.html',
+  styleUrls: ['./admin-home.component.css']
 })
-export class AdminDashboardComponent implements OnInit {
+export class AdminHomeComponent implements OnInit {
 
   private msg:string;
+  private addBlogUrl=addBlogUrl;
+  private editBlogUrl=editBlogUrl;
   constructor(private title:Title,private requestService:RequestService,private http:Http) {
     this.getDataFromBlog();
   }
@@ -24,8 +27,7 @@ export class AdminDashboardComponent implements OnInit {
 
   getDataFromBlog(){
 
-    const h=this.requestService.getAuthHeaders();
-    this.http.get('/api/blog-server/t',{headers:this.requestService.getAuthHeaders()})
+    this.http.get('/api/blog-server/t',this.requestService.getAuthOptions())
       .subscribe(
         e=>{
           console.log(e['_body']);
@@ -35,4 +37,5 @@ export class AdminDashboardComponent implements OnInit {
 
 
   }
+
 }

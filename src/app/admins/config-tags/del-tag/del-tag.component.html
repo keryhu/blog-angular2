@@ -1,0 +1,27 @@
+<md-card class="card-item">
+  <md-card-title>
+    删除选择的标签
+  </md-card-title>
+  <md-card-content>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <p>
+        <md-select placeholder="选择需要被删除的标签" formControlName="selectedTag"
+                   style="width: 300px">
+          <md-option *ngFor="let tag of allTags" [value]="tag">
+            {{tag}}
+          </md-option>
+        </md-select>
+
+        <button md-fab type="submit" [disabled]="!form.valid">
+          <md-icon class="md-24">check</md-icon>
+        </button>
+
+      </p>
+
+      <p> 您选择的是: <span class="selectedTag">{{form.value.selectedTag}}</span></p>
+
+
+    </form>
+  </md-card-content>
+</md-card>

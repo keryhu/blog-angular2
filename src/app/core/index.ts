@@ -11,6 +11,7 @@ export * from './top-navbar';
 export * from './footers';
 export * from './auth';
 export * from './err-msg';
+export * from './util';
 
 
 /*
@@ -24,9 +25,18 @@ export const sourceCodeUrl='/source-code';
 export const leaveMessageUrl='/leave-message';
 export const loginUrl='/login';
 
+export const adminHomeUrl='/admin';
+export const addBlogUrl='/admin/add-blog';
+export const editBlogUrl='/admin/edit-blog';
+export const addSourceCode='/admin/add-source-code';
+export const editSourceCode='/admin/edit-source-code';
+export const configTag='/admin/config-tag';
+export const configFriendlyLink='/admin/config-friendly-link';
+
+
 export const refreshTokenSaveUrl:string='/api/storeRefreshToken';
 export const refreshTokenGetUrl:string='/api/getRefreshToken';
-export const authUrl: string=`http://localhost:9999/uaa/oauth/token`;
+export const authUrl: string='http://127.0.0.1:9999/uaa/oauth/token';
 
 
 //  http client from  server url
@@ -47,3 +57,12 @@ export const minLeftRefreshTokenSeconds:number=35;
 export const accessTokenValiditySeconds:number=300;
 
 
+//    tag
+export const addTagUrl='/api/tag/tags/create';
+export const delTagUrl='/api/tag/tags/del';
+export const findAllTagsUrl='/api/tag/tags/findAll';
+export const updateTagUrl='/api/tag/tags/update';
+
+
+//--------------错误代码的编号---------
+export const tagNameHasExist='1001';
