@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 
 import {TagCenterComponent} from "./tag-center.component";
-import {AllTagsResolver} from "../../../core";
+import {AllTagsResolver,SpinnerGuard} from "../../../core";
 
 
 const tagCenterRoutes:Routes=[
@@ -10,6 +10,7 @@ const tagCenterRoutes:Routes=[
   {
     path: '',
     component: TagCenterComponent,
+    canActivate: [SpinnerGuard],
     resolve:{tags: AllTagsResolver}
   }
 ];

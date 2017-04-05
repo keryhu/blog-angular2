@@ -3,12 +3,14 @@ import {RouterModule, Routes} from "@angular/router";
 
 
 import {SourceCodeComponent} from "./source-code.component";
+import {SpinnerGuard} from "../../../core";
 
 
 const sourceCodeRoutes:Routes=[
   {
     path: '',
     component: SourceCodeComponent,
+    canActivate: [SpinnerGuard]
     /*
      canActivate: [UnauthenticatedGuard,SpinnerGuard],
      resolve: {

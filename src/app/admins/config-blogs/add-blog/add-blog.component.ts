@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Title} from "@angular/platform-browser";
 
-import {adminHomeUrl} from "../../../core";
-import {Subscription} from "rxjs";
+import {
+  blogImageUploadUrl, blogImgUploadRequestPart, imgAcceptType, imgMaxSize, imgResizeDimension,
+  imgResizeMinSize,SpinnerService
+} from "../../../core";
+import {Observable, Subscription} from "rxjs";
+import {AddBlogService} from "./add-blog.service";
 
 @Component({
   selector: 'app-add-blog',
@@ -12,14 +16,28 @@ import {Subscription} from "rxjs";
 })
 export class AddBlogComponent implements OnInit {
 
-  private submitSub:Subscription;
+  private submitSub: Subscription;
   private submitted = false;
-  private form:FormGroup;
 
-  constructor(private title:Title,private fb:FormBuilder) { }
+  //能够接受的上传文件的格式。
+  private acceptType: string = imgAcceptType
+  private maxSize: number = imgMaxSize;  //最大4Mb的图片
+  private minResizeSize: number = imgResizeMinSize;  //resize 处理的，最小的文件大小、
+  private imageSaveUrl = blogImageUploadUrl;
+  private resizeDimension = imgResizeDimension;
+  private imgUploadUrl = blogImageUploadUrl;
+  private imgUploadRequestPart = blogImgUploadRequestPart;
+
+  // 上面是传递给  file upload 组件的属性
+  private form: FormGroup;
+
+  constructor(private title: Title, private fb: FormBuilder, private addBlogService: AddBlogService,
+              private spinner: SpinnerService) {
+  }
 
   ngOnInit() {
     this.setTitle();
+    this.spinner.stop();
     this.createForm();
   }
 
@@ -27,10 +45,11 @@ export class AddBlogComponent implements OnInit {
     this.title.setTitle('树己之路-发布博客');
   }
 
-  createForm(){
-    this.form=this.fb.group({
-      username:['',Validators.required],
-      password:['',Validators.required]
+
+  createForm() {
+    this.form = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
 
     this.form.valueChanges
@@ -41,7 +60,9 @@ export class AddBlogComponent implements OnInit {
   }
 
   onValueChanged(data?: any) {
-    if (!this.form) { return; }
+    if (!this.form) {
+      return;
+    }
     const form = this.form;
     for (const field in this.formErrors) {
       // clear previous error message (if any)
@@ -68,6 +89,12 @@ export class AddBlogComponent implements OnInit {
 
 
   onSubmit() {
-    this.submitted=true;
+    this.submitted = true;
+  }
+
+  ngOnDestroy() {
+    if (typeof this.submitSub !== 'undefined') {
+      this.submitSub.unsubscribe();
+    }
   }
 }

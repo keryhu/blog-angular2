@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import {MaterialModule} from '@angular/material';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -10,7 +12,7 @@ import {CoreModule} from "./core";
 import {AppRoutingModule} from "./app-routing.module";
 import {SharedModule} from "./shared";
 import {CKEditorModule} from "ng2-ckeditor";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     CoreModule,
     SharedModule,
     AppRoutingModule,
-    CKEditorModule
+    CKEditorModule,
+    // 只能放在appModule，不能放在CoreModule里面
+
 
   ],
 

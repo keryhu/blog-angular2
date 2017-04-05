@@ -12,6 +12,7 @@ export * from './footers';
 export * from './auth';
 export * from './err-msg';
 export * from './util';
+export * from './spinner';
 
 
 /*
@@ -31,12 +32,11 @@ export const editBlogUrl='/admin/edit-blog';
 export const addSourceCode='/admin/add-source-code';
 export const editSourceCode='/admin/edit-source-code';
 export const configTag='/admin/config-tag';
-export const configFriendlyLink='/admin/config-friendly-link';
 
 
 export const refreshTokenSaveUrl:string='/api/storeRefreshToken';
 export const refreshTokenGetUrl:string='/api/getRefreshToken';
-export const authUrl: string='http://127.0.0.1:9999/uaa/oauth/token';
+export const authUrl: string='/uaa/oauth/token';
 
 
 //  http client from  server url
@@ -63,6 +63,26 @@ export const delTagUrl='/api/tag/tags/del';
 export const findAllTagsUrl='/api/tag/tags/findAll';
 export const updateTagUrl='/api/tag/tags/update';
 
+//    blog
+export const blogImageUploadUrl='/api/blog-server/blog/upload-image';
+export const getBlogUnusedImgUrl='/api/blog-server/blog/getUnusedImgUrl';
+export const rmUnusedImgUrl='/api/blog-server/blog/rm-unused-img';
 
 //--------------错误代码的编号---------
 export const tagNameHasExist='1001';
+
+
+//
+export const supportImgType=['jpg','jpeg','png'];
+export const uploadErrMsg="图片格式必需为'jpg','jpeg','png'";
+export const imgMaxSize=4 * 1024 * 1024;  //最大4Mb的图片
+export const imgResizeMinSize=200 * 1024;  //resize 处理的，最小的文件大小、
+export const imgAcceptType='image/*';
+//图片需要resize 后的像素，宽度，高度。
+export const imgResizeDimension={
+  width: 200,
+  height: 250
+};
+export const blogImgUploadRequestPart='blogImage';
+
+

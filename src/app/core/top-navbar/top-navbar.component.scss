@@ -6,9 +6,6 @@ md-toolbar img{
  */
 
 md-toolbar {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
 }
@@ -27,4 +24,5 @@ md-nav-list {
   // This fills the remaining space, by using flexbox.
   // Every toolbar row uses a flexbox row layout.
   flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
 }

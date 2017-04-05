@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  addBlogUrl, addSourceCode, adminHomeUrl, configFriendlyLink, configTag, editBlogUrl,
+  addBlogUrl, addSourceCode, adminHomeUrl, configTag, editBlogUrl,
   editSourceCode
 } from "../../../core";
 
@@ -17,7 +17,6 @@ export class ToolBarComponent implements OnInit {
   private addSourceCode=addSourceCode;
   private editSourceCode=editSourceCode;
   private configTag=configTag;
-  private configFriendlyLink=configFriendlyLink;
   constructor() { }
 
   ngOnInit() {

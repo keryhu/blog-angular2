@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {AdminHomeComponent} from "./admin-home.component";
+import {SpinnerGuard} from "../../core";
 
 
 const adminHomeRoutes:Routes=[
 
   {
     path: '',
-    component: AdminHomeComponent
+    component: AdminHomeComponent,
+    canActivate: [SpinnerGuard]
   }
 ]
 

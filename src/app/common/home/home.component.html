@@ -50,7 +50,7 @@
   <!-- 这里配置后台处理的 post url-->
   <ckeditor
     [(ngModel)]="ckeditorContent"
-    [config]="{uiColor: '#666666',filebrowserUploadUrl:'/uploader/upload'}"
+    [config]='ckeditorConfigString'
     (change)="onChange($event)"
     (ready)="onReady($event)"
     (blur)="onBlur($event)"

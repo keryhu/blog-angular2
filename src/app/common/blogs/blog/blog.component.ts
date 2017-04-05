@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
 import {GetBlogFromDbService} from "../get-blog-from-db.service";
+import {SpinnerService} from "../../../core";
 
 
 
@@ -15,11 +16,13 @@ export class BlogComponent implements OnInit {
 
   content=`<h1>h1 content h1 </h1>`;
 
-  constructor(private title:Title,private getBlogsService:GetBlogFromDbService) { }
+  constructor(private title:Title,private getBlogsService:GetBlogFromDbService,
+              private spinner: SpinnerService) { }
 
 
   ngOnInit() {
     this.setTitle();
+    this.spinner.stop();
   }
 
    setTitle() {

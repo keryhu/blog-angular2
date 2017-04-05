@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RichTextModule} from "../../../shared";
 import {BlogTemplateComponent} from "./blog-template.component";
 
 @NgModule({
-  imports: [CommonModule,RichTextModule],
+  imports: [CommonModule],
   declarations: [BlogTemplateComponent],
   exports:[BlogTemplateComponent]
 })

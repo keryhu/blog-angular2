@@ -1,6 +1,6 @@
 <div class="whole">
 <md-card>
-  <md-card-title align="center">
+  <md-card-title>
     登陆
   </md-card-title>
   <md-card-content>
@@ -24,11 +24,15 @@
         {{ formErrors.password }}
       </div>
 
-      <button class="full-width loginButton" type="submit"
-              md-raised-button
+      <button class="full-width" type="submit"
+              md-raised-button *ngIf="!waitingLoading"
               color="primary"   [disabled]="!form.valid">
         登录
       </button>
+      <md-progress-bar *ngIf="waitingLoading"
+                       mode="indeterminate">
+
+      </md-progress-bar>
     </form>
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
+import {SpinnerService} from "../../../core";
 
 
 
@@ -11,11 +12,12 @@ import {Title} from "@angular/platform-browser";
 })
 export class LeaveMessageComponent implements OnInit {
 
-  constructor(private title:Title) { }
+  constructor(private title:Title,private spinner: SpinnerService) { }
 
 
   ngOnInit() {
     this.setTitle();
+    this.spinner.stop();
   }
 
   setTitle() {

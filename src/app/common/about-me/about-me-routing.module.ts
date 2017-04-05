@@ -2,13 +2,16 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 
 import {AboutMeComponent} from "./about-me.component";
+import {SpinnerGuard} from "../../core";
 
 
 const aboutMeRoutes:Routes=[
 
   {
     path: '',
-    component: AboutMeComponent
+    component: AboutMeComponent,
+    canActivate: [SpinnerGuard]
+
   }
 ]
 

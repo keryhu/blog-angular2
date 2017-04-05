@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
-import {Http} from "@angular/http";
+import {SpinnerService} from "../../core";
 
-import {RequestService,addBlogUrl,editBlogUrl} from "../../core";
+
 
 @Component({
   selector: 'app-admin-home',
@@ -11,31 +11,17 @@ import {RequestService,addBlogUrl,editBlogUrl} from "../../core";
 })
 export class AdminHomeComponent implements OnInit {
 
-  private msg:string;
-  private addBlogUrl=addBlogUrl;
-  private editBlogUrl=editBlogUrl;
-  constructor(private title:Title,private requestService:RequestService,private http:Http) {
-    this.getDataFromBlog();
+
+  constructor(private title:Title,private spinner: SpinnerService) {
   }
 
   ngOnInit() {
     this.setTitle();
+    this.spinner.stop();
   }
   setTitle() {
     this.title.setTitle('树己之路-管理员首页');
   }
 
-  getDataFromBlog(){
-
-    this.http.get('/api/blog-server/t',this.requestService.getAuthOptions())
-      .subscribe(
-        e=>{
-          console.log(e['_body']);
-          this.msg=e['_body'];
-        }
-      )
-
-
-  }
 
 }

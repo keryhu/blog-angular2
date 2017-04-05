@@ -1,14 +1,30 @@
-
 <div class="whole">
   <md-card>
-    <md-card-title align="center">发布新的博客</md-card-title>
+    <md-card-title>发布新的博客</md-card-title>
 
     <md-card-content>
+      <p>
+        如果您要在博客中插入图片，请先上传它到服务器;上传成功后，将<strong>url地址
+        粘贴</strong>到下面的"图文编辑器"的"上传图片"图标的服务器地址。
+      </p>
 
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" >
+      <md-divider></md-divider>
+      <app-show-unused-img></app-show-unused-img>
+
+      <md-divider></md-divider>
+      <div class="uploadArea">
+        <app-upload-file [acceptType]="acceptType" [maxSize]="maxSize"
+                         [minResizeSize]="minResizeSize" [saveUrl]="imgUploadUrl"
+                         [resizeDimension]="resizeDimension" [requestPart]="imgUploadRequestPart">
+
+        </app-upload-file>
+      </div>
+
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <p>
           <md-input-container class="full-width">
-            <input mdInput placeholder="用户名" value="" formControlName="username" >
+            <input mdInput placeholder="用户名" value="" formControlName="username">
           </md-input-container>
         </p>
 
@@ -26,7 +42,7 @@
 
         <button class="full-width loginButton" type="submit"
                 md-raised-button
-                color="primary"   [disabled]="!form.valid">
+                color="primary" [disabled]="!form.valid">
           提交
         </button>
       </form>

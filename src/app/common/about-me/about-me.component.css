@@ -4,6 +4,7 @@
 
 .hobbies{
   display: flex;
+  display: -webkit-flex;
 }
 
 .hobbyName{
