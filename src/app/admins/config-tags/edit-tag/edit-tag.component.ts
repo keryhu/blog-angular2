@@ -14,7 +14,7 @@ export class EditTagComponent implements OnInit {
   @Input() allTags: string[];
   private submitted: boolean = false;
   private sub: Subscription;
-  private form: FormGroup;
+  public form: FormGroup;
 
   constructor(private snackBar: MdSnackBar, private fb: FormBuilder,
               private editTagService: EditTagService) {

@@ -1,0 +1,36 @@
+<md-card style="margin-top: 15px">
+  <md-card-title>
+    您的评论：
+  </md-card-title>
+  <md-card-content>
+    <!--因为这个里面有 ckeditor 里面可能会有回车，所以不能使用内置的 ngSubmit -->
+    <form [formGroup]="form">
+
+      <p class="title">
+        <md-input-container style="width: 50%">
+          <input mdInput placeholder="输入您的昵称" formControlName="petName">
+        </md-input-container>
+      </p>
+
+      <ckeditor
+        formControlName="content"
+        [config]='ckeditorConfig'
+        debounce="500">
+      </ckeditor>
+
+      <div class="submitButton">
+
+        <button type="submit" md-raised-button  (click)="onSubmit()"
+                color="primary" [disabled]="!form.valid" *ngIf="!waitingLoading">
+          提交
+        </button>
+
+        <md-progress-bar *ngIf="waitingLoading"
+                         mode="indeterminate">
+
+        </md-progress-bar>
+      </div>
+
+    </form>
+  </md-card-content>
+</md-card>

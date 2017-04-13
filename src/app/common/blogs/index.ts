@@ -5,6 +5,8 @@
  */
 
 
-export * from './blog';
-export * from './blog-template';
-
+export * from './blog-home';
+export * from './blog-simple';
+export * from './blog-detail';
+export * from './blog-center';
+export * from './blog-comment';

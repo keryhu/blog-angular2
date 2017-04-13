@@ -7,3 +7,4 @@
 
 export * from './add-blog';
 export * from './edit-blog';
+export * from './manage-blog-template';

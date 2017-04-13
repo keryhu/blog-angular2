@@ -15,7 +15,7 @@ export class DelTagComponent implements OnInit ,OnDestroy{
 
   private submitted:boolean=false;
   private sub:Subscription;
-  private form:FormGroup;
+  public form:FormGroup;
   constructor(private snackBar: MdSnackBar,private fb:FormBuilder,
               private delTagService:DelTagService) { }
 

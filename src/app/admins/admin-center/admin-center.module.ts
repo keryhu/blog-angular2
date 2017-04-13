@@ -10,7 +10,7 @@ import {ToolBarModule} from "../shared";
 
 
 @NgModule({
-  imports: [SharedModule,AdminCenterRoutingModule,ToolBarModule],
+  imports: [SharedModule,AdminCenterRoutingModule],
   declarations: [AdminCenterComponent],
   exports:[AdminCenterComponent]
 })

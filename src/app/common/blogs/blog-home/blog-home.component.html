@@ -1,0 +1,56 @@
+<div class="whole">
+
+  <md-card>
+    <md-card-title>
+      <md-input-container color="warn" style="width: 80%">
+        <input mdInput [(ngModel)]="key" type="text" placeholder="搜索博客"
+               (keyup.enter)="onKeyEnter(key)">
+      </md-input-container>
+    </md-card-title>
+    <md-card-content>
+
+      <div class="loadBlogsFromServer">
+
+        <div class="leftSimpleBlogs">
+          <div class="firstLine">
+            <h5>共&nbsp;{{totalNum}}&nbsp;条记录</h5>
+            <app-optional-sort (updateSort)="receiveUpdateSort($event)"></app-optional-sort>
+          </div>
+
+          <div>
+            <div *ngFor="let sb of simpleBlogs; trackBy:trackBySimpleBlogs">
+              <md-divider></md-divider>
+              <app-blog-simple [simpleblog]="sb"></app-blog-simple>
+            </div>
+          </div>
+        </div>
+
+        <div class="rightTags">
+          <app-tag-sort [tags]="allTags" (newTag)="receiveNewTag($event)">
+
+          </app-tag-sort>
+        </div>
+      </div>
+    </md-card-content>
+
+  </md-card>
+
+
+  <div class="paginationCode" *ngIf="totalNum>10">
+    <ngb-pagination [collectionSize]="totalNum" [(page)]="defaultPageNum" [pageSize]="pageSize"
+                    [maxSize]="mSize" [rotate]="true" [boundaryLinks]="true"
+                    (pageChange)="pageChange()">
+
+    </ngb-pagination>
+
+  </div>
+  <hr>
+  <!--
+    <app-baidu-google-ad class="ad"></app-baidu-google-ad>
+
+  -->
+</div>
+
+
+
+

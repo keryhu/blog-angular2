@@ -68,8 +68,24 @@ export const blogImageUploadUrl='/api/blog-server/blog/upload-image';
 export const getBlogUnusedImgUrl='/api/blog-server/blog/getUnusedImgUrl';
 export const rmUnusedImgUrl='/api/blog-server/blog/rm-unused-img';
 
+export const publishBlogUrl='/api/blog-server/blog/publishBlog';
+export const simpleBlogUrl='/api/blog-server/blog/find-simple-blogs';
+export const detailBlogUrl='/api/blog-server/blog/individual';  //后面加blogId
+
+export const serverUpdateBlogUrl='/api/blog-server/blog/update';
+export const serverDelBlogUrl='/api/blog-server/blog/del';
+//  删除某个具体博客下面的 具体的评论。
+export const delCommentUrl='/api/blog-server//blog/delOnlyComment';
+
+// blog comment
+export const newBlogCommentUrl='/api/comment/free/create';
+
+
+
 //--------------错误代码的编号---------
 export const tagNameHasExist='1001';
+// 当用户输入错误的的blogId，不能正常显示详细的blog页码的时候，错误代码
+export const invalidBlogId='1020';
 
 
 //

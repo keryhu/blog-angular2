@@ -1,0 +1,34 @@
+<md-card>
+  <md-card-title>
+    {{wholeTitle}}
+  </md-card-title>
+  <md-card-content>
+
+
+    <button md-raised-button color="primary" (click)="showUpload()"
+            *ngIf="!loadingUnUsedImg">我要上传图片
+    </button>
+
+    <button md-raised-button color="accept" (click)="hideUpload()"
+            [disabled]="!loadingUnUsedImg"
+            style="margin-left: 15px">隐藏
+    </button>
+    <!-- show unused img 不能用 *ngIf 包含-->
+    <app-show-unused-img [displayThisComponent]="loadingUnUsedImg">
+    </app-show-unused-img>
+
+
+    <app-release-template [ckPlaceholder]="ckPlaceholder"
+                          [ckContent]="ckContent"
+                          [descriptionPlaceholder]="descriptionPlaceholder"
+                          [descriptionContent]="descriptionContent"
+                          [allTags]="allTags"  [allTagsContent]="allTagsContent"
+                          [saveUrl]="saveUrl" [id]="id"
+                          [titlePlaceholder]="titlePlaceholder"
+                          [titleContent]="titleContent"
+                          [manageType]="manageType">
+    </app-release-template>
+
+
+  </md-card-content>
+</md-card>

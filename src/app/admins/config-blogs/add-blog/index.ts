@@ -8,4 +8,3 @@
 export * from './add-blog.component';
 export * from './add-blog-routing.module';
 export * from './add-blog.module';
-export * from './add-blog.service';

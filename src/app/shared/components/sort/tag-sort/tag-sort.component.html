@@ -1,0 +1,9 @@
+<h6>
+  标签
+</h6>
+<md-button-toggle-group name="tag" [(ngModel)]="selectedTag"
+                        [vertical]="true" (change)="updateTag()">
+  <md-button-toggle *ngFor="let tag of tags" [value]="tag">
+    {{tag}}
+  </md-button-toggle>
+</md-button-toggle-group>

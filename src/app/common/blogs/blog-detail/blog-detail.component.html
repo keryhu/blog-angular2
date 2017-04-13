@@ -1,0 +1,88 @@
+<div class="whole">
+  <div *ngIf="getLoggedIn()|async " style="margin: 15px">
+    <button md-button color="warn" (click)="editBlog()">编辑此博客</button>
+
+    <button md-raised-button color="warn" (click)="delBlog()"
+            style="margin-left: 15px">删除此博客
+    </button>
+  </div>
+  <md-card>
+    <md-card-header>
+      <md-card-title>
+        <h1>{{detailBlog.title}}</h1>
+
+
+      </md-card-title>
+
+      <md-card-subtitle>
+        <div>
+          {{detailBlog.description}}
+        </div>
+
+      </md-card-subtitle>
+    </md-card-header>
+    <div class="authorAndUpdateTime">
+      <div>更新： {{detailBlog.updateTime|dateParse:"fromNow"}}</div>
+
+      <div>作者：{{detailBlog.author}}</div>
+    </div>
+    <md-chip-list>
+      <md-chip *ngFor="let tag of detailBlog.tags">{{tag}}</md-chip>
+    </md-chip-list>
+
+    <div class="reprintRemarks">
+      原创作品，允许转载，转载时请务必以超链接形式标明文章 <a [href]="detailBlogUrl">原始出处 </a>、
+      <a [href]="aboutMeUrl">作者信息</a>和本声明。否则将追究法律责任。
+    </div>
+    <md-divider></md-divider>
+
+    <md-card-content>
+      <div #dataContainer></div>
+
+    </md-card-content>
+    <md-card-actions>
+      <button md-button>转载</button>
+    </md-card-actions>
+
+    <md-card-footer>
+      <div class="readingAndTransferTimes">
+        <div>
+      <span mdTooltip="阅读" mdTooltipPosition="above">
+        <i class="fa fa-openid icon" aria-hidden="true"></i>
+      </span>
+          ({{detailBlog.readingTimes}})
+        </div>
+
+        <div class="icon">|</div>
+        <div>
+      <span mdTooltip="转载" mdTooltipPosition="above">
+      <i class="fa fa-share-alt icon" aria-hidden="true"></i>
+      </span>
+          ({{detailBlog.transferTimes}})
+        </div>
+      </div>
+    </md-card-footer>
+  </md-card>
+  <md-divider></md-divider>
+  <md-card>
+    <md-card-title>
+      <i class="fa fa-comments" aria-hidden="true"></i>
+      共&nbsp;{{detailBlog.comments.length}}&nbsp;评论
+    </md-card-title>
+    <md-card-content>
+      <div *ngFor="let cd of detailBlog.comments">
+        <app-comment-display [commentDisplay]="cd" [blogId]="blogId"
+                             [isLoggedIn]="getLoggedIn()">
+        </app-comment-display>
+      </div>
+    </md-card-content>
+  </md-card>
+
+
+  <div *ngIf="!detailBlog.ipBlocked">
+    <app-blog-comment [blogId]="detailBlog.id"></app-blog-comment>
+  </div>
+
+</div>
+
+

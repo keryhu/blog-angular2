@@ -16,7 +16,7 @@ import {PageNotFoundComponent} from "./common/page-not-found/page-not-found.comp
 
 const routes: Routes = [
   { path: '',  component:HomeComponent },
-  { path: 'blog',loadChildren:'app/common/blogs/blog/blog.module#BlogModule' },
+  { path: 'blog',loadChildren:'app/common/blogs/blog-center/blog-center.module#BlogCenterModule' },
   {path:'login',loadChildren:'app/common/login/login.module#LoginModule'},
   {path:'source-code',loadChildren:'app/common/source-codes/source-code/source-code.module#SourceCodeModule'},
   {path:'about-me',loadChildren:'app/common/about-me/about-me.module#AboutMeModule'},

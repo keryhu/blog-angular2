@@ -14,7 +14,7 @@ import {AddTagService} from "./add-tag.service";
 })
 export class AddTagComponent implements OnInit,OnDestroy {
 
-  private form:FormGroup;
+  public form:FormGroup;
   private submitted:boolean=false;
 
   private sub:Subscription;

@@ -13,9 +13,11 @@ import {Hobby} from "../../shared";
 })
 export class AboutMeComponent implements OnInit {
 
+
   // 关于我的，一些爱好，简介
   hobbyNames:string[]=[];
   hobbyValues:string[]=[];
+
 
   hobbies:Hobby[]=[
     {name:'英文名',value:'Kery'},
@@ -26,7 +28,6 @@ export class AboutMeComponent implements OnInit {
     {name:'新浪微博',value:'正在申请中'},
     {name:'邮箱',value:'keryhu@hotmail.com'},
   ];
-
 
   blogUrl=blogUrl;
 

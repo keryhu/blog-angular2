@@ -1,0 +1,30 @@
+<md-card>
+
+  <md-card-subtitle style="color: #0088ff">
+    上传图片到服务器
+  </md-card-subtitle>
+  <img *ngIf="uploadImg|async" md-card-image [src]="uploadImg|async">
+  <md-card-content>
+
+
+  </md-card-content>
+  <md-card-actions>
+    <label class="fileContainer " *ngIf="!waitUpload&&!(showUpload()|async)">
+      选择本地图片上传
+      <input type="file" [accept]="acceptType" (change)="changeEvent($event)"/>
+    </label>
+
+
+    <div *ngIf="(showUpload()|async)">
+      <button md-raised-button (click)="cancelUpload()"
+              [disabled]="startUpload()">移除
+      </button>
+
+      <md-spinner *ngIf="startUpload()"></md-spinner>
+
+      <button *ngIf="(showUpload()|async)&&!startUpload()&&saveUrl" md-raised-button
+              (click)="uploadFile()">提交
+      </button>
+    </div>
+  </md-card-actions>
+</md-card>

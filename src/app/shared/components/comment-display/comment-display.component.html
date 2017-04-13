@@ -1,0 +1,14 @@
+<div class="whole">
+  <md-card>
+    <md-card-content>
+      <div #dataContainer></div>
+      <button *ngIf="isLoggedIn|async" md-button color="warn" (click)="delComment()">
+        删除评论
+      </button>
+    </md-card-content>
+    <md-card-footer>
+      {{commentDisplay.petName}} 发布于： {{commentDisplay.createTime|dateParse:"fromNow"}}
+    </md-card-footer>
+  </md-card>
+</div>
+

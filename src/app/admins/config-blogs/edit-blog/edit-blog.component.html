@@ -1,17 +1,20 @@
 <div class="whole">
   <md-card>
-    <md-card-title>删除/编辑指定博客</md-card-title>
-    <md-card-content>
-      <md-input-container style="width: 60%">
-        <input mdInput placeholder="输入博客主题或选择标签">
-      </md-input-container>
-
-      <md-toolbar color="primary">
-        这里是目前所有的博客标签按钮，选择一个
-      </md-toolbar>
-
-      <p>下面是显示的查询结果</p>
-    </md-card-content>
+    <md-card-subtitle>
+      如果要编辑某个博客，先回到
+      <a [routerLink]="blogUrl"  routerLinkActive="active-link" >博客</a> ，
+      登录管理员后导航到指定页面，即可删除／编辑
+    </md-card-subtitle>
+    <app-manage-blog-template [ckPlaceholder]="ckPlaceholder"
+                              [ckContent]="ckContent"
+                              [allTags]="allTags" [allTagsContent]="allTagsContent"
+                              [saveUrl]="saveUrl"  [id]="blogId"
+                              [titlePlaceholder]="titlePlaceholder"
+                              [titleContent]="titleContent"
+                              [descriptionPlaceholder]="descriptionPlaceholder"
+                              [descriptionContent]="descriptionContent"
+                              [manageType]="manageType">
+    </app-manage-blog-template>
 
   </md-card>
 </div>

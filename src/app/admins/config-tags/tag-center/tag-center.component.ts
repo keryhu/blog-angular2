@@ -10,7 +10,7 @@ import {SpinnerService} from "../../../core";
 })
 export class TagCenterComponent implements OnInit {
 
-  private allTags=[];
+  public allTags=[];
 
   constructor(private title:Title,private route: ActivatedRoute,private spinner: SpinnerService) { }
 

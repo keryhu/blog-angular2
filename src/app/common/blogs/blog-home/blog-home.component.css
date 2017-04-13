@@ -1,0 +1,41 @@
+.whole{
+  margin: 15px;
+
+}
+
+.whole md-card{
+  margin: 15px 0;
+}
+
+md-card-content{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+
+.loadBlogsFromServer{
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap-reverse;
+  -webkit-flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.firstLine{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+}
+.leftSimpleBlogs{
+  width: 80%;
+}
+
+.paginationCode{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+}

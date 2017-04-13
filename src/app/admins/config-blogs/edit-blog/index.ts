@@ -7,3 +7,4 @@
 
 export * from './edit-blog.component';
 export * from './edit-blog.module';
+export * from './edit-blog-resolve.service';

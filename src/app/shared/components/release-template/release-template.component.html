@@ -1,0 +1,73 @@
+<div class="whole">
+  <md-card>
+    <md-card-title>
+
+    </md-card-title>
+    <md-card-content>
+      <!--因为这个里面有多个 button，所以不能使用内置的 ngSubmit -->
+      <form [formGroup]="form">
+        <p class="title">
+          <md-input-container style="width: 70%">
+            <input mdInput [placeholder]="titlePlaceholder" value="" formControlName="title">
+          </md-input-container>
+        </p>
+
+        <p class="title">
+          <md-input-container style="width: 70%">
+            <input mdInput [placeholder]="descriptionPlaceholder"
+                   value="" formControlName="description">
+          </md-input-container>
+        </p>
+
+        <h4>文本编辑器:</h4>
+
+        <ckeditor
+          formControlName="ckContent"
+          (change)="onChange($event)"
+          [config]="ckeditorConfigJson"
+          debounce="500">
+        </ckeditor>
+
+        <div class="allSTags">
+
+        <span *ngFor="let iconTag of selectedTags">
+           <app-can-del-icon [iconName]="iconTag" class="iconItem"
+                             (closeIconName)="closeTagName($event)">
+           </app-can-del-icon>
+        </span>
+
+        </div>
+
+        <h4 style="margin-top: 15px">标签:</h4>
+        <p>
+          <md-select placeholder="选择需要被添加的标签"  [(ngModel)]="addedTag"
+                     style="width: 300px" [ngModelOptions]="{standalone: true}">
+            <md-option *ngFor="let tag of allTags" [value]="tag">
+              {{tag}}
+            </md-option>
+          </md-select>
+
+          <button md-mini-fab  [disabled]="disabledAddTag()"
+                  (click)="addTag()"><md-icon>check</md-icon>
+          </button>
+        </p>
+
+
+        <div class="submitButton">
+          <button type="submit" md-raised-button  (click)="onSubmit()"
+                  color="primary" [disabled]="!form.valid" *ngIf="!waitSubmitting">
+            提交
+          </button>
+
+        </div>
+        <md-progress-bar *ngIf="waitSubmitting"
+                         mode="indeterminate">
+        </md-progress-bar>
+      </form>
+      <md-divider></md-divider>
+      <h5 style="margin: 15px 0">预览-文本编辑器： </h5>
+      <div #dataContainer></div>
+
+    </md-card-content>
+  </md-card>
+</div>

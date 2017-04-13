@@ -7,3 +7,6 @@ export * from './baidu-google-ad';
 export * from './upload-file';
 export * from './show-unused-img';
 export * from './release-template';
+export * from './can-del-icon';
+export * from './sort';
+export * from './comment-display';

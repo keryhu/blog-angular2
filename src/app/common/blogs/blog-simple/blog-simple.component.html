@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="left">
+    <div>
+      <h3 style="color: #0088ff"><a [href]="detailBlogUrl">
+        {{simpleblog.title}}</a>
+      </h3>
+    </div>
+    <div>{{simpleblog.description}}</div>
+
+    <div class="tags">
+      <md-chip-list class="leftItem">
+        <md-chip *ngFor="let tag of simpleblog.tags">{{tag}}</md-chip>
+      </md-chip-list>
+    </div>
+
+    <div class="leftItem">更新：{{simpleblog.updateTime|dateParse:"fromNow"}}</div>
+  </div>
+  <div class="center">
+
+    <div>
+      <span mdTooltip="阅读" mdTooltipPosition="before">
+        <i class="fa fa-openid icon" aria-hidden="true"></i>
+      </span>
+      {{simpleblog.readingTimes}}
+    </div>
+    <div class="leftItem">
+      <span mdTooltip="转载" mdTooltipPosition="before">
+      <i class="fa fa-share-alt icon" aria-hidden="true"></i>
+      </span>
+      {{simpleblog.transferTimes}}
+    </div>
+  </div>
+  <div class="right">
+     <span mdTooltip="评论" mdTooltipPosition="before">
+     <i class="fa fa-commenting icon" aria-hidden="true"></i>
+      </span>
+    <span> {{simpleblog.commentTimes}}</span>
+  </div>
+
+</div>

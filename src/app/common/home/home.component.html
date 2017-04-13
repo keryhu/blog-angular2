@@ -6,12 +6,13 @@
     <md-toolbar color="primary">这里有啥?</md-toolbar>
 
     <md-card-content>
-      <p>
-        一名在上海奋斗的IT中年，记录了他学习Java、大数据、机器学习、 人工智能技能等领域心得，希望能方便更多的人！
+      <p style="text-indent:2em;">
+        一名在上海奋斗的IT中年，记录了他学习C、Java、大数据、机器学习、 人工智能技能等领域心得，
+        既方便自己以后遇到问题查阅，也希望能方便到遇到类似问题的同仁！
       </p>
       <p>
         如果您也是一名程序（猿），也许您可以多来这里，因为作者和您一样的苦逼，这里有共同语言，
-        这里说不定能找到您苦思冥想的Bug
+        有Bug之痛。
       </p>
     </md-card-content>
     <md-card-actions>
@@ -19,8 +20,10 @@
     </md-card-actions>
 
   </md-card>
+<!--
+<app-baidu-google-ad></app-baidu-google-ad>
+-->
 
-  <app-baidu-google-ad></app-baidu-google-ad>
 
   <md-card>
     <md-toolbar color="primary">为嘛叫"树己之路"?</md-toolbar>
@@ -46,16 +49,6 @@
       <a md-raised-button [routerLink]="aboutMeUrl" routerLinkActive="active">更多关于作者</a>
     </md-card-actions>
   </md-card>
-
-  <!-- 这里配置后台处理的 post url-->
-  <ckeditor
-    [(ngModel)]="ckeditorContent"
-    [config]='ckeditorConfigString'
-    (change)="onChange($event)"
-    (ready)="onReady($event)"
-    (blur)="onBlur($event)"
-    debounce="500">
-  </ckeditor>
 
 
 </div>

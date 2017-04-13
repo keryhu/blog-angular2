@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import {AddBlogComponent} from "./add-blog.component";
 import {RouterModule, Routes} from "@angular/router";
 
-import {SpinnerGuard} from "../../../core";
+import {SpinnerGuard,AllTagsResolver} from "../../../core";
 
 
 const addBlogRoutes:Routes=[
@@ -10,9 +10,10 @@ const addBlogRoutes:Routes=[
   {
     path: '',
     component: AddBlogComponent,
-    canActivate: [SpinnerGuard]
+    canActivate: [SpinnerGuard],
+    resolve:{tags: AllTagsResolver}
   }
-]
+];
 
 
 @NgModule({

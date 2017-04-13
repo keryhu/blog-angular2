@@ -4,8 +4,13 @@
     <a md-list-item routerLink="/" routerLinkActive="active">首页</a>
     <a md-list-item [routerLink]="aboutMeUrl" routerLinkActive="active">关于我</a>
     <a md-list-item [routerLink]="blogUrl" routerLinkActive="active">博客</a>
+    <!--
+    暂时不开通
     <a md-list-item [routerLink]="sourceCodeUrl" routerLinkActive="active">开源</a>
     <a md-list-item [routerLink]="leaveMessageUrl" routerLinkActive="active">留言</a>
+
+    -->
+
 
   </md-nav-list>
   <span class="example-fill-remaining-space"></span>
@@ -14,3 +19,6 @@
   </md-nav-list>
 
 </md-toolbar>
+
+<app-tool-bar *ngIf="getLoggedIn()|async "></app-tool-bar>
+

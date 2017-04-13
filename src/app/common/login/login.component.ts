@@ -15,11 +15,11 @@ import {SpinnerService} from "../../core/spinner/spinner.service";
 export class LoginComponent implements OnInit {
 
   private submitted = false;
-  private loginErrMsg='';
+  public loginErrMsg='';
   private loginSub: Subscription;
-  private form:FormGroup;
+  public form:FormGroup;
   //当点击登录按钮后，跳出来的 显示等待的图标
-  private waitingLoading: boolean = false;
+  public waitingLoading: boolean = false;
 
   constructor(private title:Title,private fb:FormBuilder,private authService:AuthService,
               private router: Router, private spinner: SpinnerService,) { }

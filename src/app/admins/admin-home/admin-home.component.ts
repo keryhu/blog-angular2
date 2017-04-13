@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Title} from "@angular/platform-browser";
 import {SpinnerService} from "../../core";
 
@@ -11,14 +11,13 @@ import {SpinnerService} from "../../core";
 })
 export class AdminHomeComponent implements OnInit {
 
-
   constructor(private title:Title,private spinner: SpinnerService) {
   }
-
   ngOnInit() {
     this.setTitle();
     this.spinner.stop();
   }
+
   setTitle() {
     this.title.setTitle('树己之路-管理员首页');
   }

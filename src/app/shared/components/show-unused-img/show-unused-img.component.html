@@ -1,0 +1,58 @@
+<md-card *ngIf="displayThisComponent">
+
+  <md-card-title>
+    <md-card-subtitle>
+      已上传，但未使用的图片
+    </md-card-subtitle>
+  </md-card-title>
+  <p>
+    如需在博客中插入图片，请先上传;再将<strong>url地址
+    粘贴</strong>到下面的"文本编辑器"的
+    <span mdTooltip="图像->图像信息->URL">
+          <i class="fa fa-picture-o" aria-hidden="true"></i>
+        </span>。
+  </p>
+  <md-progress-bar *ngIf="waitingShowing"
+                   mode="indeterminate">
+  </md-progress-bar>
+  <md-card-content>
+    <small *ngIf="!hasUnusedImg" style="margin-left: 15px;color: #ff4d48;">暂无</small>
+    <div class="allUnUsedImg">
+
+      <md-card class="unUserImgCard" *ngFor="let i of unUsedImgs ">
+
+        <img md-card-image [src]="i">
+        <md-card-content>
+
+          <small>{{i}}</small>
+
+          <p style="color: #902b2b">复制上面url到下面的文本编辑器
+            <span mdTooltip="图像->图像信息->URL">
+          <i class="fa fa-picture-o" aria-hidden="true"></i>
+           </span>。
+          </p>
+        </md-card-content>
+        <md-card-actions>
+          <button md-raised-button color="warn" (click)="rmImg(i)"
+                  *ngIf="!waitingRemoving">删除
+          </button>
+        </md-card-actions>
+        <md-progress-bar *ngIf="waitingRemoving"
+                         mode="indeterminate">
+        </md-progress-bar>
+      </md-card>
+    </div>
+    <md-divider></md-divider>
+    <div class="uploadArea">
+      <app-upload-file [acceptType]="acceptType" [maxSize]="maxSize"
+                       [minResizeSize]="minResizeSize" [saveUrl]="imgUploadUrl"
+                       [resizeDimension]="resizeDimension"
+                       [requestPart]="imgUploadRequestPart"
+                       (uploadSuccess)="listenImgUpload($event)">
+
+      </app-upload-file>
+    </div>
+  </md-card-content>
+</md-card>
+
+

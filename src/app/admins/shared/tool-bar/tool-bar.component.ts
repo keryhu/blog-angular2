@@ -11,12 +11,15 @@ import {
 })
 export class ToolBarComponent implements OnInit {
 
-  private adminUrl=adminHomeUrl;
-  private addBlogUrl=addBlogUrl;
-  private editBlogUrl=editBlogUrl;
-  private addSourceCode=addSourceCode;
-  private editSourceCode=editSourceCode;
-  private configTag=configTag;
+  // 这里的都要打开为public，因为toolBarComponent被admin外面的访问
+
+
+  public adminUrl=adminHomeUrl;
+  public addBlogUrl=addBlogUrl;
+  public editBlogUrl=editBlogUrl;
+  public addSourceCode=addSourceCode;
+  public editSourceCode=editSourceCode;
+  public configTag=configTag;
   constructor() { }
 
   ngOnInit() {

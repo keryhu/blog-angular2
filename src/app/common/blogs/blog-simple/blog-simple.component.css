@@ -1,0 +1,34 @@
+.container{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.container .left{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  width: 50%;
+}
+
+.container .left .leftItem{
+  margin-top: 15px;
+}
+
+.container .center .leftItem{
+  margin-top: 15px;
+}
+
+
+.container .left .tags{
+  display: flex;
+  display: -webkit-flex;
+}
+
+.container .icon{
+  margin-right: 15px;
+}

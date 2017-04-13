@@ -12,6 +12,7 @@ import {CoreModule} from "./core";
 import {AppRoutingModule} from "./app-routing.module";
 import {SharedModule} from "./shared";
 import {CKEditorModule} from "ng2-ckeditor";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 
@@ -19,7 +20,6 @@ import {CKEditorModule} from "ng2-ckeditor";
   declarations: [
     AppComponent,
     HomeComponent,
-
     //不能放在  coreModule
     PageNotFoundComponent,
 
@@ -33,7 +33,8 @@ import {CKEditorModule} from "ng2-ckeditor";
     CoreModule,
     SharedModule,
     AppRoutingModule,
-    CKEditorModule,
+   // CKEditorModule,
+    NgbModule.forRoot()
     // 只能放在appModule，不能放在CoreModule里面
 
 

@@ -1,0 +1,36 @@
+md-card{
+  margin-top: 15px;
+}
+.allUnUsedImg{
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+
+.unUserImgCard {
+  width: 350px;
+  min-height: 300px;
+  margin: 15px;
+}
+
+.unUserImgCard  img{
+  width: inherit;
+  height: 150px;
+}
+
+.allUnUsedImg md-card-actions{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+
+.uploadArea {
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-justify-content: center;
+  margin-top: 15px;
+}

@@ -12,8 +12,6 @@ import {AllTagsResolver} from "./util";
 import {SpinnerService,SpinnerModule} from "./spinner";
 
 
-// from "../common/blogs/get-blog-from-db.service" 不能写成 "../common" 要不然会出现 依赖循环的错误
-import {GetBlogFromDbService} from "../common/blogs/get-blog-from-db.service";
 
 
 // from "/auth/auth-guard.service" 不能写成 "../auth" 要不然会出现 依赖循环的错误
@@ -36,7 +34,7 @@ import {GetBlogFromDbService} from "../common/blogs/get-blog-from-db.service";
   imports: [CommonModule,FormsModule,TopNavbarModule,FooterModule,FlexLayoutModule,
     BaiduGoogleAdModule, SpinnerModule ],
   declarations: [],
-  providers:[GetBlogFromDbService,GetFriendlyLinkService,RequestService,HttpErrMsgConvertService,
+  providers:[GetFriendlyLinkService,RequestService,HttpErrMsgConvertService,
     AuthProviders,RefreshTokenRestService,AllTagsResolver,SpinnerService],
   exports:[CommonModule,FormsModule,TopNavbarModule,FooterModule,FlexLayoutModule,BaiduGoogleAdModule,
     SpinnerModule

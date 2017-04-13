@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import {MaterialModule} from "@angular/material";
 
-import {SharedModule,UploadFileModule,ShowUnusedImgModule} from "../../../shared";
+import {SharedModule,} from "../../../shared";
 import {AddBlogComponent} from "./add-blog.component";
 import {AddBlogRoutingModule} from "./add-blog-routing.module";
-import {AddBlogService} from "./add-blog.service";
+import {ManageBlogTemplateModule} from "../manage-blog-template";
 
 
 
 @NgModule({
-  imports: [SharedModule,AddBlogRoutingModule,MaterialModule,UploadFileModule,ShowUnusedImgModule],
+  imports: [SharedModule,AddBlogRoutingModule,MaterialModule,
+    ManageBlogTemplateModule],
   declarations: [AddBlogComponent],
-  providers:[AddBlogService],
   exports:[AddBlogComponent]
 })
 export class AddBlogModule { }
