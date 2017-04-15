@@ -23,12 +23,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.setTitle();
     this.spinner.stop();
-
   }
 
   setTitle() {
     this.title.setTitle('树己之路');
   }
+
 
 
 

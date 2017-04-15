@@ -10,7 +10,6 @@ export * from './core.module';
 export * from './top-navbar';
 export * from './footers';
 export * from './auth';
-export * from './err-msg';
 export * from './util';
 export * from './spinner';
 

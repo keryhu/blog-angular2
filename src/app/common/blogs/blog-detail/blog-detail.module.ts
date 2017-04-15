@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import {MaterialModule} from "@angular/material";
 
 import {SharedModule,CommentDisplayModule} from "../../../shared";
 import {BlogDetailComponent} from "./blog-detail.component";
@@ -9,7 +8,7 @@ import {BlogCommentModule} from "../blog-comment";
 import {BlogDetailService} from "./blog-detail.service";
 
 @NgModule({
-  imports: [SharedModule,MaterialModule,BlogDetailRoutingModule,BlogCommentModule,
+  imports: [SharedModule,BlogDetailRoutingModule,BlogCommentModule,
   CommentDisplayModule],
   declarations: [BlogDetailComponent],
   providers:[DetailBlogResolveService,BlogDetailService],

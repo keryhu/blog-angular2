@@ -2,14 +2,15 @@ import {NgModule, SkipSelf, Optional} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule} from "@angular/forms";
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MdButtonModule, MdCardModule, MdToolbarModule} from "@angular/material";
 
 import {TopNavbarModule} from "./top-navbar";
 import {FooterModule,GetFriendlyLinkService} from "./footers";
 import {BaiduGoogleAdModule} from "../shared";
 import {RequestService, RefreshTokenRestService, AuthProviders} from "./auth";
-import {HttpErrMsgConvertService} from "./err-msg";
 import {AllTagsResolver} from "./util";
 import {SpinnerService,SpinnerModule} from "./spinner";
+
 
 
 
@@ -32,12 +33,12 @@ import {SpinnerService,SpinnerModule} from "./spinner";
  */
 @NgModule({
   imports: [CommonModule,FormsModule,TopNavbarModule,FooterModule,FlexLayoutModule,
-    BaiduGoogleAdModule, SpinnerModule ],
+    BaiduGoogleAdModule, SpinnerModule ,MdCardModule,MdToolbarModule,MdButtonModule],
   declarations: [],
-  providers:[GetFriendlyLinkService,RequestService,HttpErrMsgConvertService,
-    AuthProviders,RefreshTokenRestService,AllTagsResolver,SpinnerService],
+  providers:[GetFriendlyLinkService,RequestService, AuthProviders,
+    RefreshTokenRestService,AllTagsResolver,SpinnerService],
   exports:[CommonModule,FormsModule,TopNavbarModule,FooterModule,FlexLayoutModule,BaiduGoogleAdModule,
-    SpinnerModule
+    SpinnerModule,MdCardModule,MdToolbarModule,MdButtonModule
     ]
 })
 export class CoreModule {

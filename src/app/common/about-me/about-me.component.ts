@@ -25,7 +25,6 @@ export class AboutMeComponent implements OnInit {
     {name:'座右铭',value:'没有想好，请先停下！'},
     {name:'地点',value:'上海'},
     {name:'领域',value:'java'},
-    {name:'新浪微博',value:'正在申请中'},
     {name:'邮箱',value:'keryhu@hotmail.com'},
   ];
 

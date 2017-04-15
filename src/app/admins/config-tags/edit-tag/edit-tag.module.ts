@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MaterialModule} from "@angular/material";
+import {
+  MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdSelectModule,
+  MdSnackBarModule
+} from "@angular/material";
 import {ReactiveFormsModule} from "@angular/forms";
 import {EditTagComponent} from "./edit-tag.component";
 import {EditTagService} from "./edit-tag.service";
 
 @NgModule({
-  imports: [CommonModule,MaterialModule,ReactiveFormsModule],
+  imports: [CommonModule,MdCardModule,MdSelectModule,MdInputModule,MdSnackBarModule,
+    MdButtonModule,MdIconModule,ReactiveFormsModule],
   declarations: [EditTagComponent],
   providers:[EditTagService],
   exports:[EditTagComponent]

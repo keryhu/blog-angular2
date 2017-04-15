@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, RequestOptions,URLSearchParams,Response } from '@angular/http';
 import {clientId, clientSecret, lsat} from "../index";
-import {HttpErrMsgConvertService} from "../err-msg";
 import {Observable, Subject} from "rxjs";
 
 @Injectable()
@@ -15,7 +14,7 @@ export class RequestService {
   asyAuthHeader$=this.asyAuthHeaderSource.asObservable();
 
 
-  constructor(private ers:HttpErrMsgConvertService){}
+  constructor(){}
 
   getJsonHeaders():Headers {
     const headers = new Headers();

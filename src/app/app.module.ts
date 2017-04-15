@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import {MaterialModule} from '@angular/material';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import 'hammerjs';
@@ -11,7 +10,6 @@ import { HomeComponent,PageNotFoundComponent } from './common';
 import {CoreModule} from "./core";
 import {AppRoutingModule} from "./app-routing.module";
 import {SharedModule} from "./shared";
-import {CKEditorModule} from "ng2-ckeditor";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 
@@ -29,7 +27,6 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
-    MaterialModule,
     CoreModule,
     SharedModule,
     AppRoutingModule,

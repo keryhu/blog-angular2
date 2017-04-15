@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import {MaterialModule} from "@angular/material";
 
 import {SharedModule,} from "../../../shared";
 import {AddBlogComponent} from "./add-blog.component";
@@ -9,7 +8,7 @@ import {ManageBlogTemplateModule} from "../manage-blog-template";
 
 
 @NgModule({
-  imports: [SharedModule,AddBlogRoutingModule,MaterialModule,
+  imports: [SharedModule,AddBlogRoutingModule,
     ManageBlogTemplateModule],
   declarations: [AddBlogComponent],
   exports:[AddBlogComponent]
