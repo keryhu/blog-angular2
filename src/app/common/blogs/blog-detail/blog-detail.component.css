@@ -27,7 +27,7 @@ md-divider{
 }
 
 
-.whole md-card md-card-footer .readingAndTransferTimes{
+.whole md-card md-card-footer .readingTimes{
   display: flex;
   display: -webkit-flex;
   margin-bottom: 15px;
@@ -36,7 +36,3 @@ md-divider{
   -webkit-justify-content: flex-end;
 }
 
-
-.whole md-card md-card-footer .readingAndTransferTimes .icon{
-  margin: 0 20px;
-}

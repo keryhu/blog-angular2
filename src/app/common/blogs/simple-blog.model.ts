@@ -12,7 +12,6 @@ export class SimpleBlog{
   description='';
   updateTime='';
   readingTimes=0;
-  transferTimes=0;
   tags=[];
   commentTimes=0;
 }
