@@ -20,8 +20,6 @@ export class OptionalSortComponent implements OnInit {
     {viewValue: '更新--远到近', value: 'updateTime,asc'},
     {viewValue: '阅读--多到少', value: 'readingTimes,desc'},
     {viewValue: '阅读--少到多', value: 'readingTimes,asc'},
-    {viewValue: '转载--多到少', value: 'transferTimes,desc'},
-    {viewValue: '转载--少到多', value: 'transferTimes,asc'},
     {viewValue: '评论--多到少', value: 'commentTimes,desc'},
     {viewValue: '评论--少到多', value: 'commentTimes,asc'},
   ];
