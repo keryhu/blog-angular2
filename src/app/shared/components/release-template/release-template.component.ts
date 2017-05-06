@@ -64,8 +64,7 @@ export class ReleaseTemplateComponent implements OnInit, OnDestroy {
     }
   }
 
-
-  //显示 带有格式的html到前端
+  //为了 编写博客的时候，有预览功能。显示 带有格式的html到前端
   @ViewChild('dataContainer') dataContainer: ElementRef;
 
   createForm() {
@@ -111,7 +110,7 @@ export class ReleaseTemplateComponent implements OnInit, OnDestroy {
     'ckContent': {'required': '密码不能为空.'}
   };
 
-  // 原生dom加载带有html格式的代码
+  // 原生dom加载带有html格式的代码，为了 编写博客的时候，有预览功能
   loadData(data) {
     this.dataContainer.nativeElement.innerHTML = data;
   }
@@ -168,7 +167,7 @@ export class ReleaseTemplateComponent implements OnInit, OnDestroy {
             title: '',
             description: '',
             ckContent: `<p>${this.ckPlaceholder}</p>`
-          })
+          });
           // 刷新下页面，如果引用过图片，这样就可以通过刷新页面，重新加载未使用的图片
           location.reload();
         }

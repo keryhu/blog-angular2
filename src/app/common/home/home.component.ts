@@ -17,18 +17,17 @@ export class HomeComponent implements OnInit {
   aboutMeUrl=aboutMeUrl;
   blogUrl=blogUrl;
 
-
   constructor(private title:Title,private spinner: SpinnerService) { }
 
   ngOnInit() {
     this.setTitle();
     this.spinner.stop();
+
   }
 
   setTitle() {
     this.title.setTitle('树己之路');
   }
-
 
 
 

@@ -23,8 +23,8 @@
 
         <ckeditor
           formControlName="ckContent"
-          (change)="onChange($event)"
           [config]="ckeditorConfigJson"
+          (change)="onChange($event)"
           debounce="500">
         </ckeditor>
 
@@ -67,7 +67,6 @@
       <md-divider></md-divider>
       <h5 style="margin: 15px 0">预览-文本编辑器： </h5>
       <div #dataContainer></div>
-
     </md-card-content>
   </md-card>
 </div>

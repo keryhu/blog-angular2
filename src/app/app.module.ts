@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -10,7 +10,7 @@ import { HomeComponent,PageNotFoundComponent } from './common';
 import {CoreModule} from "./core";
 import {AppRoutingModule} from "./app-routing.module";
 import {SharedModule} from "./shared";
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+
 
 
 
@@ -31,10 +31,8 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     SharedModule,
     AppRoutingModule,
    // CKEditorModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
     // 只能放在appModule，不能放在CoreModule里面
-
-
   ],
 
   providers: [],

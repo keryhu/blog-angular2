@@ -24,7 +24,7 @@ export class AboutMeComponent implements OnInit {
     {name:'爱好',value:'游泳、围棋'},
     {name:'座右铭',value:'没有想好，请先停下！'},
     {name:'地点',value:'上海'},
-    {name:'领域',value:'java'},
+    {name:'领域',value:'Java，人工智能，大数据'},
     {name:'邮箱',value:'keryhu@hotmail.com'},
   ];
 
