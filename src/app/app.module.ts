@@ -21,7 +21,6 @@ import {SharedModule} from "./shared";
     //不能放在  coreModule
     PageNotFoundComponent,
 
-
   ],
   imports: [
     BrowserModule,

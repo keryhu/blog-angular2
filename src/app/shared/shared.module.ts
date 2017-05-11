@@ -17,13 +17,13 @@ import {DateParseModule} from "./pipe/date-parse/date-parse.module";
 @NgModule({
   imports: [CommonModule,FormsModule,ReactiveFormsModule,MdCardModule,MdToolbarModule,
     MdListModule,MdButtonModule,MdInputModule,MdProgressBarModule,MdChipsModule,
-    MdSnackBarModule,MdTooltipModule, BaiduGoogleAdModule,DateParseModule
+    MdSnackBarModule,MdTooltipModule, BaiduGoogleAdModule,DateParseModule,
   ],
   //declarations: [],
   exports:[CommonModule,FormsModule,ReactiveFormsModule,
     BaiduGoogleAdModule,DateParseModule,MdCardModule,MdToolbarModule,
     MdListModule,MdChipsModule,MdProgressBarModule,MdButtonModule,MdInputModule,
-    MdSnackBarModule,MdTooltipModule
+    MdSnackBarModule,MdTooltipModule,
   ]
 })
 export class SharedModule { }
