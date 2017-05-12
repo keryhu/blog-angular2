@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GetFriendlyLinkService} from "../get-friendly-link.service";
-import {FriendlyLink} from "../../../shared/models/friendly-link.model";
+import {FriendlyLink} from "../../../shared";
 
 @Component({
   selector: 'app-footer',

@@ -4,8 +4,10 @@
   </md-card-title>
 
   <md-card-actions>
-    <div class="links" *ngFor="let f of friendlyLinks">
-      <a md-button [href]='f.link'>{{f.name}}</a>
+    <div class="links">
+      <div *ngFor="let f of friendlyLinks">
+        <a md-button [href]='f.link'>{{f.name}}</a>
+      </div>
     </div>
 
   </md-card-actions>
