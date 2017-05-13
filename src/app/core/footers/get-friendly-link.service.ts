@@ -17,7 +17,8 @@ export class GetFriendlyLinkService {
   getFriendlyLinks(): FriendlyLink[] {
 
     return [{name: 'Spring', link: 'https://spring.io'},
-      {name: '新浪博客', link: 'http://blog.sina.com.cn/keryhu'}];
+      {name: '新浪博客', link: 'http://blog.sina.com.cn/keryhu'},
+      {name: '新浪微博', link: 'http://weibo.com/keryhu'}];
   }
 
 

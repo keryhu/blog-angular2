@@ -16,4 +16,8 @@ export class FooterComponent implements OnInit {
     this.friendlyLinks=this.getFlS.getFriendlyLinks();
   }
 
+  // 在新的标签页，打开 友情链接
+  open(url:string):void{
+    window.open(url, "_blank");
+  }
 }
