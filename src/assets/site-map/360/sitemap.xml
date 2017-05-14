@@ -49,7 +49,7 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
-    
+
     <url>
         <loc>http://www.keryhu.com/blog/c9340902-0498-4b0d-91a0-8e4a4f41aaa3</loc>
         <lastmod></lastmod>
@@ -104,5 +104,12 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
-    
+
+  <url>
+    <loc>http://www.keryhu.com/blog/3dbd7142-6eea-4c69-8a6b-d10266c08471</loc>
+    <lastmod></lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

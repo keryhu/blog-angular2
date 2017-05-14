@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from "@angular/router";
 import {BlogCenterComponent} from "./blog-center.component";
-import {SpinnerGuard} from "../../../core/spinner/spinner.guard";
 
 
 const blogCenterRoutes: Routes=[
   {
     path: '',
     component: BlogCenterComponent,
-    canActivate:[SpinnerGuard],
+    //canActivate:[SpinnerGuard],
     children:[
       {
         path:'',

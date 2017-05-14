@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
 import {Title} from "@angular/platform-browser";
-import {SpinnerService} from "../../core/spinner/spinner.service";
 
 @Component({
   selector: 'app-page-not-found',
@@ -11,11 +10,10 @@ import {SpinnerService} from "../../core/spinner/spinner.service";
 export class PageNotFoundComponent implements OnInit {
 
 
-  constructor(private _location: Location,private title:Title,private spinner: SpinnerService) { }
+  constructor(private _location: Location,private title:Title) { }
 
   ngOnInit() {
     this.setTitle();
-    this.spinner.stop();
   }
 
   setTitle() {

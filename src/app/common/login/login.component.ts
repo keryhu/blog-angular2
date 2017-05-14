@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../../core/auth/auth.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {lsat} from "../../core/index";
+
+import {AuthService,lsat} from "../../core";
+
 import {Subscription} from "rxjs";
-import {SpinnerService} from "../../core/spinner/spinner.service";
 
 @Component({
   selector: 'app-login',
@@ -21,13 +21,12 @@ export class LoginComponent implements OnInit {
   //当点击登录按钮后，跳出来的 显示等待的图标
   public waitingLoading: boolean = false;
 
-  constructor(private title:Title,private fb:FormBuilder,private authService:AuthService,
-              private router: Router, private spinner: SpinnerService,) { }
+  constructor(private title:Title,private fb:FormBuilder,
+              private authService:AuthService, private router: Router) { }
 
 
   ngOnInit() {
     this.setTitle();
-    this.spinner.stop();
     this.createForm();
   }
 

@@ -2,8 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Title} from "@angular/platform-browser";
 
 
-import {blogUrl, serverUpdateBlogUrl, SpinnerService} from "../../../core";
-import {ActivatedRoute, ActivatedRouteSnapshot} from "@angular/router";
+import {blogUrl, serverUpdateBlogUrl} from "../../../core";
+import {ActivatedRoute} from "@angular/router";
 import {Subscription} from "rxjs";
 
 
@@ -36,11 +36,9 @@ export class EditBlogComponent implements OnInit,OnDestroy {
   public blogId:string;
   private paramsSub: Subscription;
 
-  constructor(private title:Title,private spinner: SpinnerService,
-              private route: ActivatedRoute) { }
+  constructor(private title:Title, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.spinner.stop();
     this.setTitle();
     this.getUrlParam();
     this.editBlog = this.route.snapshot.data['editBlog'];

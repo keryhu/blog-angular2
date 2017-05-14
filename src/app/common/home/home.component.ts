@@ -3,7 +3,7 @@ import {Title} from "@angular/platform-browser";
 
 
 
-import {aboutMeUrl, blogUrl,SpinnerService} from "../../core";
+import {aboutMeUrl, blogUrl} from "../../core";
 
 // 增加博客 标签分类
 @Component({
@@ -17,11 +17,10 @@ export class HomeComponent implements OnInit {
   aboutMeUrl=aboutMeUrl;
   blogUrl=blogUrl;
 
-  constructor(private title:Title,private spinner: SpinnerService) { }
+  constructor(private title:Title) { }
 
   ngOnInit() {
     this.setTitle();
-    this.spinner.stop();
 
   }
 

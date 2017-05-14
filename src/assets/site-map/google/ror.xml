@@ -7,12 +7,11 @@
 <item>
      <link>http://www.keryhu.com/</link>
      <title>树己之路</title>
-     <description>java技术博客，包含spring，大数据，机器学习，
-java web，人工智能</description>
+     <description>技术博客,java,java web,spring,c,机器学习,微信开发，app开发，网站开发，
+       大数据,人工智能</description>
      <ror:updatePeriod>daily</ror:updatePeriod>
      <ror:sortOrder>0</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
 </channel>
 </rss>
-  

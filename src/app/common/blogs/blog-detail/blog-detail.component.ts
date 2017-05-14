@@ -3,7 +3,7 @@ import {Title} from "@angular/platform-browser";
 import {ActivatedRoute, Router} from "@angular/router";
 
 
-import {SpinnerService, aboutMeUrl, blogUrl, AuthService, editBlogUrl} from "../../../core";
+import { aboutMeUrl, blogUrl, AuthService, editBlogUrl} from "../../../core";
 import {BlogDetailService} from "./blog-detail.service";
 import {MdSnackBar} from "@angular/material";
 
@@ -21,9 +21,9 @@ export class BlogDetailComponent implements OnInit {
   public aboutMeUrl = aboutMeUrl;
 
 
-  constructor(private title: Title, private spinner: SpinnerService,
-              private router: Router, private route: ActivatedRoute,
-              private authService: AuthService,private snackBar: MdSnackBar,
+  constructor(private title: Title, private router: Router,
+              private route: ActivatedRoute, private authService: AuthService,
+              private snackBar: MdSnackBar,
               private blogDetailService:BlogDetailService) {
   }
 
@@ -32,7 +32,6 @@ export class BlogDetailComponent implements OnInit {
 
   ngOnInit() {
     this.setTitle();
-    this.spinner.stop();
     this.detailBlog = this.route.snapshot.data['detailBlog'];
     this.loadData(this.detailBlog.content);
   }

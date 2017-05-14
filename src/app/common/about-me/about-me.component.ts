@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
-import {blogUrl,SpinnerService} from "../../core";
+import {blogUrl} from "../../core";
 import {Hobby} from "../../shared";
 
 
@@ -20,7 +20,7 @@ export class AboutMeComponent implements OnInit {
 
 
   hobbies:Hobby[]=[
-    {name:'英文名',value:'Kery'},
+    {name:'英文名',value:'Kery.Hu'},
     {name:'爱好',value:'游泳、围棋'},
     {name:'座右铭',value:'没有想好，请先停下！'},
     {name:'地点',value:'上海'},
@@ -30,11 +30,10 @@ export class AboutMeComponent implements OnInit {
 
   blogUrl=blogUrl;
 
-  constructor(private title:Title,private spinner: SpinnerService) { }
+  constructor(private title:Title) { }
 
   ngOnInit() {
     this.setTitle();
-    this.spinner.stop();
     this.hobbies.forEach(e=>{
     this.hobbyNames.push(e.name);
     this.hobbyValues.push(e.value);

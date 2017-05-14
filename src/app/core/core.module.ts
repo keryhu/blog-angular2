@@ -9,7 +9,6 @@ import {FooterModule,GetFriendlyLinkService} from "./footers";
 import {BaiduGoogleAdModule} from "../shared";
 import {RequestService, RefreshTokenRestService, AuthProviders} from "./auth";
 import {AllTagsResolver} from "./util";
-import {SpinnerService,SpinnerModule} from "./spinner";
 
 
 
@@ -33,12 +32,12 @@ import {SpinnerService,SpinnerModule} from "./spinner";
  */
 @NgModule({
   imports: [CommonModule,FormsModule,TopNavbarModule,FooterModule,FlexLayoutModule,
-    BaiduGoogleAdModule, SpinnerModule ,MdCardModule,MdToolbarModule,MdButtonModule],
+    BaiduGoogleAdModule ,MdCardModule,MdToolbarModule,MdButtonModule],
   declarations: [],
   providers:[GetFriendlyLinkService,RequestService, AuthProviders,
-    RefreshTokenRestService,AllTagsResolver,SpinnerService],
-  exports:[CommonModule,FormsModule,TopNavbarModule,FooterModule,FlexLayoutModule,BaiduGoogleAdModule,
-    SpinnerModule,MdCardModule,MdToolbarModule,MdButtonModule
+    RefreshTokenRestService,AllTagsResolver],
+  exports:[CommonModule,FormsModule,TopNavbarModule,FooterModule,FlexLayoutModule,BaiduGoogleAdModule
+    ,MdCardModule,MdToolbarModule,MdButtonModule
     ]
 })
 export class CoreModule {

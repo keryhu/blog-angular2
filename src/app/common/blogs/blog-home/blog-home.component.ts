@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {Title} from "@angular/platform-browser";
 import {ActivatedRoute, Router} from "@angular/router";
 import {URLSearchParams} from "@angular/http";
-import {blogUrl, SpinnerService} from "../../../core";
+import {blogUrl} from "../../../core";
 
 import {PaginationParam, Sort, OptionalSortComponent, TagSortComponent} from "../../../shared";
 import {SimpleBlog} from "../simple-blog.model";
@@ -41,8 +41,8 @@ export class BlogHomeComponent implements OnInit {
   @ViewChild(TagSortComponent)
   private tagSortComponent: TagSortComponent;
 
-  constructor(private title: Title, private spinner: SpinnerService,
-              private router: Router, private route: ActivatedRoute,
+  constructor(private title: Title, private router: Router,
+              private route: ActivatedRoute,
               private simpleBlogService: SimpleBlogService) {
   }
 
@@ -60,7 +60,6 @@ export class BlogHomeComponent implements OnInit {
       this.totalNum = this.route.snapshot.data['simpleBlog']['totalElements'];
     }
     this.setTitle();
-    this.spinner.stop();
     // 当页面刷新的时候，获取到此参数，分别将页码，排序的对象设置到 对应的组件中
     this.getUrlParams();
   }

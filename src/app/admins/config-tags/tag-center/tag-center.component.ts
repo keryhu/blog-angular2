@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
 import {ActivatedRoute} from "@angular/router";
-import {SpinnerService} from "../../../core";
 
 @Component({
   selector: 'app-tag-center',
@@ -12,11 +11,10 @@ export class TagCenterComponent implements OnInit {
 
   public allTags=[];
 
-  constructor(private title:Title,private route: ActivatedRoute,private spinner: SpinnerService) { }
+  constructor(private title:Title,private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.setTitle();
-    this.spinner.stop();
     this.allTags=this.route.snapshot.data['tags'];
   }
 

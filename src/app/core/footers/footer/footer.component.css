@@ -8,8 +8,14 @@ md-card{
   display: -webkit-flex;
   flex-direction: row;
   -webkit-flex-direction: row;
-  justify-content: space-around;
-  -webkit-justify-content: space-around;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+
+.links button{
+  margin-right: 25px;
 }
 
 md-card-footer {

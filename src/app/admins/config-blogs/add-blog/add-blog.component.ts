@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Title} from "@angular/platform-browser";
 import {ActivatedRoute} from "@angular/router";
 
-import {publishBlogUrl, SpinnerService} from "../../../core";
+import {publishBlogUrl} from "../../../core";
 
 
 @Component({
@@ -21,13 +21,11 @@ export class AddBlogComponent implements OnInit {
   public publishBlogUrl=publishBlogUrl;
   // 这个是区分，新增加博客，还是编辑博客的 标识符
   public manageType='add';
-  constructor(private title: Title,private route: ActivatedRoute,
-              private spinner: SpinnerService) {
+  constructor(private title: Title,private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.setTitle();
-    this.spinner.stop();
     this.allTags=this.route.snapshot.data['tags'];
   }
 

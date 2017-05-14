@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {LeaveMessageComponent} from "./leave-message.component";
-import {SpinnerGuard} from "../../../core";
 
 
 const leaveMessageRoutes:Routes=[
   {
     path: '',
-    component: LeaveMessageComponent,
-    canActivate: [SpinnerGuard]
+    component: LeaveMessageComponent
     /*
      canActivate: [UnauthenticatedGuard,SpinnerGuard],
      resolve: {
