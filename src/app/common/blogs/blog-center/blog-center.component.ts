@@ -9,6 +9,7 @@ export class BlogCenterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

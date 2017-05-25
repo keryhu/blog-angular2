@@ -108,6 +108,8 @@ export class BlogHomeComponent implements OnInit {
     else {
       this.urlQueryParam.key = key.trim();
     }
+    // 当手工查询后，默认跳转到 第一页。
+    this.jumpToFirstPage();
     this.router.navigate([blogUrl],
       {queryParams: this.urlQueryParam});
     // 更新server 查询数据
@@ -141,6 +143,9 @@ export class BlogHomeComponent implements OnInit {
     else {
       this.urlQueryParam.sort = newSort;
     }
+
+    this.jumpToFirstPage();
+
     //  最后刷新浏览器记好了啊
     this.router.navigate([blogUrl],
       {queryParams: this.urlQueryParam});
@@ -149,21 +154,35 @@ export class BlogHomeComponent implements OnInit {
   }
 
   //当用户更换tag标签偏好的时候，能够接受到更换后的新的value
-  receiveNewTag(newTag: string) {
+  receiveNewTag(newTag: Object) {
+    //console.log('tag receive running ')
     // 如果newTag 为空，或者为"不限"，则删除掉 url里面的 tag,
-    if (!newTag || newTag == '不限') {
+    if (!newTag['selectedTag'] || newTag['selectedTag'] == '不限') {
       delete this.urlQueryParam.tag;
     }
     // 否则将新的tag，更新到url里面,
     else {
-      this.urlQueryParam.tag = newTag;
+      this.urlQueryParam.tag = newTag['selectedTag'];
     }
+
+    // 只有在tag 标签更改的时候，才会使得页码调到 第一页。
+    if(newTag['clickNum']>1){
+      this.jumpToFirstPage();
+    }
+
     //  最后刷新浏览器记好了啊
     this.router.navigate([blogUrl],
       {queryParams: this.urlQueryParam});
     // 更新server 查询数据
     this.updateServerData();
 
+  }
+
+  // 当用户点击 sort 或 tag 或 key 查询的时候，默认页码调到 第一页。
+  jumpToFirstPage(){
+    if(this.urlQueryParam.page)
+      delete this.urlQueryParam.page;
+    this.defaultPageNum=1;
   }
 
   // 刷新后台数据，在用户刷新浏览器，更新tag标签，更换排序偏好的时候，都会促发此方法。

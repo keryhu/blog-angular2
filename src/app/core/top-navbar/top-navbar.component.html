@@ -3,13 +3,15 @@
   <md-nav-list>
     <a md-list-item routerLink="/" routerLinkActive="active">首页</a>
     <a md-list-item [routerLink]="aboutMeUrl" routerLinkActive="active">关于我</a>
-    <a md-list-item [routerLink]="blogUrl" routerLinkActive="active">博客</a>
     <!--
     暂时不开通
     <a md-list-item [routerLink]="sourceCodeUrl" routerLinkActive="active">开源</a>
     <a md-list-item [routerLink]="leaveMessageUrl" routerLinkActive="active">留言</a>
 
     -->
+    <!--为什么这里，需要这样设置 blog ，因为当用户点击 非第一页后，
+    再点击 博客 导航的时候， 我需要实现跳转到 第一页，所以我使用了 href 刷新页面。-->
+    <a md-list-item [href]="blogUrl" >博客</a>
 
 
   </md-nav-list>

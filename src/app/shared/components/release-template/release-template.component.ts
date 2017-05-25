@@ -61,7 +61,11 @@ export class ReleaseTemplateComponent implements OnInit, OnDestroy {
       this.form.controls['ckContent'].setValue(`${this.ckContent}`);
       this.form.controls['description'].setValue(`${this.descriptionContent}`);
       this.selectedTags = this.allTagsContent;
+      // 当编辑的时候，刷新的时候，预览自动显示。
+      this.loadData(this.ckContent);
     }
+
+
   }
 
   //为了 编写博客的时候，有预览功能。显示 带有格式的html到前端

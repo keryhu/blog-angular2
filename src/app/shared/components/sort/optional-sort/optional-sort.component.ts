@@ -33,6 +33,7 @@ export class OptionalSortComponent implements OnInit {
 
   // 当用户更改排序偏好的时候，将方法告诉前台blog或source-code component
   update(n) {
+    console.log('OPTIONAL OSRT UPDATE ')
     this.updateSort.emit(n['value']);
   }
 
