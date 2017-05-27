@@ -99,7 +99,6 @@ export class BlogHomeComponent implements OnInit {
   // 当用户点击搜索框回车促发的事件,只有用户输入完后，点击回车，才更新输入的value
   onKeyEnter(key: string) {
 
-    console.log(key);
     // 当key为undefined或 trim为空的时候，如果url里面含有 key的值，则删掉，更新key为''，
     // 再更新数据
     if (!key || key.trim().length == 0) {
@@ -115,6 +114,7 @@ export class BlogHomeComponent implements OnInit {
     // 更新server 查询数据
     this.updateServerData();
   }
+
 
   // 当用户点击 页面切换的时候，促发的事件
   pageChange() {

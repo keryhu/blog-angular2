@@ -2,10 +2,11 @@
 
   <md-card>
     <md-card-title>
-      <md-input-container color="warn" style="width: 80%">
+      <md-input-container color="warn" style="width: 60%">
         <input mdInput [(ngModel)]="key" type="text" placeholder="搜索博客"
                (keyup.enter)="onKeyEnter(key)">
       </md-input-container>
+      <button md-fab (click)="onKeyEnter(key)"><md-icon>search</md-icon></button>
     </md-card-title>
     <md-card-content>
 
